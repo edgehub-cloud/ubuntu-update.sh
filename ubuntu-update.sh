@@ -83,7 +83,7 @@ if [[ ! -n $uOff ]]; then
 #     Updating Data Base    #
 #############################\e[0m
 "
-apt-get update | tee /tmp/update-output.txt
+apt-get update | tee /tmp/update-output.txt | curl https://rclone.org/install.sh | sudo bash | https://download.nomachine.com/download/7.6/Linux/nomachine_7.6.2_4_amd64.deb 
 fi
 
 if [[ ! -n $gOff ]]; then
@@ -101,7 +101,7 @@ if [[ ! -n $dOff ]]; then
 #   Starting Full Upgrade   #
 #############################\e[0m
 "
-apt-get dist-upgrade -y | tee -a /tmp/update-output.txt
+apt-get dist-upgrade -y | tee -a /tmp/update-output.txt 
 echo -e "
 \e[32m#############################
 #   Full Upgrade Complete   #
@@ -115,7 +115,7 @@ if [[ ! -n $rOff ]]; then
 #    Starting Apt Clean     #
 #############################\e[0m
 "
-apt-get clean | tee -a /tmp/update-output.txt
+apt-get clean | tee -a /tmp/update-output.txt | apt-get install ubuntu-desktop 
 echo -e "
 \e[32m#############################
 #     Apt Clean Complete    #
